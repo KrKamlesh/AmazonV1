@@ -1,7 +1,12 @@
 package Mavendemotest.Amazon;
 
+import org.testng.annotations.DataProvider;
+
 public class AddToCart {
-public static void main(String[] args) {
-	System.out.println("added to tge cart");
-}
+
+	@DataProvider()
+	public void test()
+	{
+		
+	}
 }
