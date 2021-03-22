@@ -26,20 +26,22 @@ public class SamsungSearch {
 		driver.findElement(By.xpath("//input[@id='twotabsearchtextbox']")).sendKeys("samsung mobile phone");
 		driver.findElement(By.xpath("//input[@id='nav-search-submit-button']")).click();
 		List<WebElement> wel = driver.findElements(By.xpath("//span[@class='a-price-whole']"));
-        List actualist=new ArrayList();
+        
+		ArrayList<String> arr=new ArrayList<String>();
 		for (int i = 0; i < wel.size(); i++) {
 			String data=wel.get(i).getText();
-			actualist.add(data);
+			
+			arr.add(data);
+		
 		}
-		Collections.sort(actualist);
-		System.out.println(actualist);
+		Collections.sort(arr);
+		Iterator it=arr.iterator();
+		while(it.hasNext())
+		{
+			System.out.println(it.next());
+			
+		}
 		
-		XSSFWorkbook workboook = new XSSFWorkbook();
-		XSSFSheet sheet = workboook.createSheet("Samsung price");
-		
-		int rows = wel.size();
-		//int cols = empdata[0].length;
-				
 		
       
       driver.close();
